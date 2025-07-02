@@ -12,7 +12,7 @@ pipeline{
     }
      stage('Build Docker image'){
       steps{
-        sh script: "docker build -t %IMAGE_NAME%:latest ."
+        sh script: "docker buildx build -t %IMAGE_NAME%:latest ."
       }
     }
      stage('Push to Dockerhub'){
